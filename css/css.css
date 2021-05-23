@@ -1,0 +1,182 @@
+:root {
+    --text-color: #00264d;
+    --submit-color: #ffb84d;
+    --sun-color: #ffff33;
+    --background-color: cornflowerblue;
+    --invalid-input-color: #ff4d4d;
+    --input-hover-color: darkcyan;
+    --cloud-color: antiquewhite;
+}
+
+body {
+    background: cornflowerblue;
+    height: 100%;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+}
+
+body, div, form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+form {
+    width: inherit;
+}
+
+h3,
+p,
+label,
+ul {
+    align-self: flex-start;
+    margin: 0 10% 10px 10%;
+}
+
+p {
+    margin-top: 30px;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+.card {
+    width: 450px;
+    min-height: 230px;
+    background: ivory;
+    border-radius: 15px;
+    position: absolute;
+    top: calc(50% - 115px);
+    /*margin-top: 200px;*/
+    padding-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    height: 40px;
+    border: 1px solid var(--background-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    font-size: large;
+}
+
+input[type='submit'] {
+    width: 30%;
+    border: none;
+    color: var(--text-color);
+    background: var(--submit-color);
+    font-weight: 600;
+    font-size: medium;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--sun-color);
+    position: absolute;
+    left: calc(50% - 300px);
+    top: calc(50% - 170px);
+    z-index: -2;
+    border: 2px dashed var(--background-color);
+    animation: rotate 200s infinite linear;
+}
+
+.cloud1,
+.cloud2,
+.cloud3 {
+    width: 200px;
+    height: 70px;
+    background: var(--cloud-color);
+    position: absolute;
+    right: calc(50% - 350px);
+    top: calc(50% - 250px);
+    border-radius: 50px;
+    z-index: -1;
+}
+
+.cloud1 {
+    animation: glideLeft 240s infinite ease-in-out;
+}
+
+.cloud2 {
+    height: 40px;
+    right: calc(50% - 450px);
+    top: 60%;
+    animation: glideLeft 280s infinite ease-in-out;
+}
+
+.cloud3 {
+    width: 60px;
+    height: 20px;
+    right: unset;
+    left: calc(50% - 400px);
+    top: 70%;
+    animation: glideLeftShort 300 infinite ease-in-out;
+}
+
+#back {
+    width: 50%;
+}
+
+#invalid {
+    color: var(--invalid-input-color);
+}
+
+#invalid,
+#no-weather-info {
+    align-self: center;
+}
+
+input:focus {
+    outline: 2px solid var(--background-color);
+}
+
+input[type='submit']:hover {
+    background: var(--text-color);
+    color: var(--submit-color);
+}
+
+input[type='text']:hover {
+    border: 1px solid var(--input-hover-color);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes glideLeft {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes glideLeftShort {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
